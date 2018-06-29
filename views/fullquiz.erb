@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+ <!DOCTYPE HTML>
  <html> 
      <head>
           <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -6,6 +6,15 @@
         <script src="code.js" type="text/javascript" charset="utf-8"></script>
         <link href="style.css" rel="stylesheet" type="text/css">
          <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,900i" rel="stylesheet">
+         <script type="text/javascript">
+
+    function toggle_visibility(id) {
+       var e = document.getElementById(id);
+       if(e.style.display == 'block')
+          e.style.display = 'none';
+       else
+          e.style.display = 'block';
+</script>
    <style>
    h1 {
     font-family: 'Playfair Display', serif;
@@ -125,7 +134,7 @@ li a:hover {
 }
 </style>
     </head>
-      <body class="cursorcustom"> 
+      <body> 
         <h1>Hobby Hub</h1>
         <div>
              <ul>
@@ -138,9 +147,96 @@ li a:hover {
         </div> <br>
         <div class="divText">
         <h2>Hobby Finder Quiz!</h2>
-        <h2 style="font-size:20px;color:black">Quiz Results: </h2>
-<p>
-  
+        <h2 style="font-size:20px;color:black">Hi! Welcome to the quiz! </h2>
+        <form method=POST>
+    <%@@sports = 0 %>
+    <%@@outdoors = 0 %>
+    <%@@mind = 0  %>
+    <%@@performing = 0 %>
+    <%@@arts = 0 %>
+        <h3>Where would you like to do this activity?</h3>
+         <input type="radio" name="locationa" value="location"> Outdoors
+         <input type="radio" name="locationb" value="location">Indoors
+         <input type="radio" name="locationc" value="location">No Preference
+    <%if params[:name]=="locationa"%>
+       <%@@outdoors += 1%>
+      <%@@sports += 1%> 
+<%elsif params[:name]=="locationb"%>
+      <%@@mind +=1 %>
+      <%@@performing += 1%>
+      <%@@arts += 1%>
+      <%@@sports += 1 %>
+<%elsif params[:name]== "locationc"%>
+      <%@@sports += 1%>
+      <%@@outdoors += 1%>
+      <%@@mind += 1 %>
+      <%@@performing += 1%>
+      <%@@arts += 1 %>
+      <%end%>
+          <h3>Do you like to work with your hands?</h3>
+         <input type="radio" name="handsa" value="hands">Yes
+         <input type="radio" name="handsb" value="hands">No
+       <%if params[:name]=="handsa"%>
+       <%@@arts += 1%>
+<%elsif params[:name]=="handsb"%>
+      <%@@sports +=1 %>
+      <%@@mind += 1%>
+      <%@@outdoors += 1 %>
+      <%@@performing += 1%>
+      <%end%>
+      <br>
+      <h3>Do you like to be active?</h3>
+            <input type="radio" name="activea" value="active">Yes
+            <input type="radio" name="activeb" value="active">No
+<%if params[:name]=="activea"%>
+       <%@@outdoors += 1%>
+       <%@@sports +=1 %>
+<%elsif params[:name]=="activeb"%>
+      <%@@mind += 1%>
+      <%@@arts += 1 %>
+      <%@@performing += 1%>
+      <%end%>
+        <br>
+         <h3>How do you like to work?</h3>
+            <input type="radio" name="worka" value="work">Alone
+            <input type="radio" name="workb" value="work">With Others
+<%if params[:name]=="worka"%>
+      <%@@outdoors += 1%>
+      <%@@sports +=1 %>
+      <%@@mind += 1%>
+      <%@@arts += 1 %>
+<%elsif params[:name]=="workb"%>
+      <%@@performing += 1%>
+      <%@@outdoors += 1%>
+      <%@@sports +=1 %>
+      <%end%>
+      <br>
+       <h3> Are you outgoing?</h3>
+            <input type="radio" name="outgoinga" value="outgoing">Yes
+            <input type="radio" name="outgoingb" value="outgoing">No<br><br>
+  <%if params[:name]=="outgoinga"%>
+      <%@@performing += 1%>
+      <%@@outdoors += 1%>
+      <%@@sports +=1 %>
+<%elsif params[:name]=="outgoingb"%>
+     <%@@outdoors += 1%>
+      <%@@sports +=1 %>
+      <%@@mind += 1%>
+      <%@@arts += 1 %>
+      <%end%>
+ 
+     <%@@sports %>
+     <%@@outdoors %>
+     <%@@mind %>
+     <%@@arts%>
+     <%@@performing%>
+  <a href="/quizresults"> <button class="button">Submit</a></button>
+      </form>
+ </div>      
+ <hr>
+
+
+<div class="divText">     
      <%if @@sports>@@performing && @@sports>@@outdoors && @@sports>@@arts && @@sports>@@mind%>
 <%= "You should try some indoor sports! It'll benefit you physically. Check out the Indoor Sports section for some suggestions." %>
 <%elsif @@mind>@@performing && @@mind>@@outdoors && @@mind>@@arts && @@mind>@@sports %>
@@ -171,15 +267,13 @@ li a:hover {
 <%=  "You should try mind or anything outdoors related.Please check both categories." %>
 <%elsif @@outdoors>=@@sports %>
 <%=  "You should try anything outdoors or sports related. Please check both catergories." %>
-<%end %>
-</p>
-  <br> 
-  <a href="/results"> <button class="button">Check the catergories</a></button>
-        </div>
-        <br>
+<%end%>
+ 
 
-        <footer class="footer">
-          <p>Created by: Amy Ma, Brynne Bursack, Alice Breternitz</p>
-        </footer>
-</body>
+</div> 
+      <br>
+      <footer class="footer">
+        <p>Created by: Amy Ma, Brynne Bursack, Alice Breternitz</p>
+      </footer>
+  </body>
 </html>
