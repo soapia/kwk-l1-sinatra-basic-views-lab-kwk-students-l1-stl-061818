@@ -1,0 +1,102 @@
+h1 {
+    font-family: 'Playfair Display', serif;
+    color: white;
+    text-align:center;
+}
+h2 {
+    font-family: 'Playfair Display', serif;
+    color: teal;
+    
+}
+
+body {
+    background-image: url("https://image.freepik.com/free-vector/dark-watercolor-background-design_1034-738.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:#D9D4D2;
+    border:2px solid white;
+}
+.image {
+    width:40px;
+    height:40px;
+}
+.tips {
+    color: #333A42 ;
+}
+.footer {
+    font-family:'Playfair Display', serif;
+    text-align:center;
+    color:white;
+}
+.navbar {
+    float:left;
+    text-align:center;
+    font-family: 'Playfair Display', serif;
+    color: #102C4C;
+}
+
+li a {
+    display: block;
+    color: #102C4C;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #333A42;
+    color:white;
+    
+}
+
+.bold {
+    font-weight: bold;
+}
+.divText {
+    background-color:#D9D4D2;
+    border:2px solid white;
+    padding:6px;
+    text-align:center;
+    font-family: 'Playfair Display', serif;
+}
+
+.tricks {
+    background-color: #D9D4D2;
+    border: 2px solid white;
+    padding: 6px;
+    font-family: 'Playfair Display', serif;
+}
+.button {
+     font-size:16px;
+     padding: 12px;
+     background-color: white;
+     border:solid black;
+     color:black;
+     font-family:'Playfair Display', serif;
+}
+ 
+.button:hover {
+    background-color: #333A42;
+    color: white;
+    padding: 12px;
+} 
+.star {
+    text-align:left;
+    font-size:20px;
+    color: #102C4C;
+}
+
+.divTest { 
+    background-color:#D9D4D2;
+    border:2px solid white;
+    padding:6px;
+    text-align:left;
+    font-family: 'Playfair Display', serif;
+}

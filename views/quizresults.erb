@@ -1,0 +1,185 @@
+ <!DOCTYPE HTML>
+ <html> 
+     <head>
+          <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>HobbyHubQuiz</title>
+        <script src="code.js" type="text/javascript" charset="utf-8"></script>
+        <link href="style.css" rel="stylesheet" type="text/css">
+         <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,900i" rel="stylesheet">
+   <style>
+   h1 {
+    font-family: 'Playfair Display', serif;
+    color: white;
+    text-align:center;
+}
+h2 {
+    font-family: 'Playfair Display', serif;
+    color: teal;
+    
+}
+
+body {
+    background-image: url("https://image.freepik.com/free-vector/dark-watercolor-background-design_1034-738.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:#D9D4D2;
+    border:2px solid white;
+}
+.image {
+    width:40px;
+    height:40px;
+}
+.tips {
+    color: #333A42 ;
+}
+.footer {
+    font-family:'Playfair Display', serif;
+    text-align:center;
+    color:white;
+}
+.navbar {
+    float:left;
+    text-align:center;
+    font-family: 'Playfair Display', serif;
+    color: #102C4C;
+}
+
+li a {
+    display: block;
+    color: #102C4C;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: teal;
+    color:white;
+    
+}
+
+.bold {
+    font-weight: bold;
+    color: teal;
+}
+.divText {
+    background-color:#D9D4D2;
+    border:2px solid white;
+    padding:6px;
+    text-align:center;
+    font-family: 'Playfair Display', serif;
+}
+
+.tricks {
+    background-color: #D9D4D2;
+    border: 2px solid white;
+    padding: 6px;
+    font-family: 'Playfair Display', serif;
+}
+.button {
+     font-size:16px;
+     padding: 12px;
+     background-color: white;
+     border:solid black;
+     color:black;
+     font-family:'Playfair Display', serif;
+}
+ 
+.button:hover {
+    background-color: teal;
+    color: white;
+    padding: 12px;
+    border:solid white;
+} 
+.star {
+    text-align:left;
+    font-size:20px;
+    color: #102C4C;
+}
+
+.personal {
+    font-size: 20px;
+    color: #102C4C;
+    font-family: 'Playfair Display', serif; 
+    font-weight: 700;
+    font-style: italic;
+}
+
+.divTest { 
+    background-color:#D9D4D2;
+    border:2px solid white;
+    padding:6px;
+    text-align:left;
+    font-family: 'Playfair Display', serif;
+}
+
+.cursorcustom {
+    cursor: url("http://www.rw-designer.com/cursor-view/23178.png"), auto;
+}
+</style>
+    </head>
+      <body class="cursorcustom"> 
+        <h1>Hobby Hub</h1>
+        <div>
+             <ul>
+          <li class="navbar" ><a  href="/">Home</a></li>
+          <li class="navbar"><a class="active" href="/quiz">Hobby Finder Quiz</a></li>
+          <li class="navbar"><a href="/tips">Tips and Tricks</a></li>
+          <li class="navbar"><a href="/start">How to Start Your Hobby</a></li>
+          <li class="navbar"><a  href="/results">Hobby Categories</a></li>
+        </ul>
+        </div> <br>
+        <div class="divText">
+        <h2>Hobby Finder Quiz!</h2>
+        <h2 style="font-size:20px;color:black">Quiz Results: </h2>
+<p>
+  
+<%#if @sports>@performing && @sports>@outdoors && @sports>@arts && @sports>@mind%>-->
+<%= #"You should try some indoor sports! It'll benefit you physically. Check out the Indoor Sports section for some suggestions." %>
+<%#elsif mind>performing && mind>outdoors && mind>arts && mind>sports %>
+  <%=#  "You should try something challenging to the mind. Please look in the ming challenge section." %>
+<%#elsif arts>performing && arts>outdoors && arts>mind && arts>sports %>
+<%=  #"You should try something art related! You are creative and your creativity can help with your projects. Please look at the art category to see what some options are!" %>
+<%#elsif performing>arts && performing>outdoors && performing>mind && performing>sport %>
+<%="You should try performing arts. It'll give you a good challenge." %>
+<%elsif @outdoors>@arts && @outdoors>@mind && @outdoors>@sports && @outdoors>@performing %>
+<%="You should try something adventurous. You shoud look in the outdoor section." %>
+<%elsif @performing>=@arts %>
+  <%=  "You should try performing arts or anything art related. Please check both categories." %>
+<%elsif @performing>=@mind  %>
+<%=  "You should try performing arts or anything mind related. Please check both categories." %>
+<%elsif @performing>=@outdoors %>
+<%=  "You should try performing arts or anything outdoor related. Please check both categories." %>
+<%elsif @performing>=@sports %>
+<%=  "You should try performing arts or anything sports related. Please check both categories." %>
+<%elsif @arts>=@sports %>
+<%=  "You should try art or anything sports related.Please check both categories." %>
+<%elsif @arts>=@mind %>
+<%=  "You should try art or anything mind related.Please check both categories." %>
+<%elsif @arts>=@outdoors %>
+<%=  "You should try art or anything outdoors related.Please check both categories." %>
+<%elsif @mind>=@sports %>
+<%=  "You should try mind or anything sports related.Please check both categories." %>
+<%elsif @mind>=@outdoors  %>
+<%=  "You should try mind or anything outdoors related.Please check both categories." %>
+<%elsif @outdoors>=@sports %>
+<%=  "You should try anything outdoors or sports related. Please check both catergories." %>
+<%end %>
+</p>
+  <br> 
+  <a href="/results"> <button class="button">Check the catergories</a></button>
+        </div>
+        <br>
+
+        <footer class="footer">
+          <p>Created by: Amy Ma, Brynne Bursack, Alice Breternitz</p>
+        </footer>
+</body>
+</html>
