@@ -9,7 +9,7 @@ class App < Sinatra::Base
     erb :tips
   end
   get '/quiz'do
-    erb :quiz
+    erb :fullquiz
   end
   get '/q2'do
     erb:q2
@@ -32,4 +32,6 @@ class App < Sinatra::Base
   get '/results' do
     erb:results
   end
+  
+  
 end
